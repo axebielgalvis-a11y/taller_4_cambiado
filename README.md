@@ -166,6 +166,7 @@ MUI Icons	5.14.0	🔣	Biblioteca de íconos
 Emotion	11.11.0	💅	CSS-in-JS para estilos
 MUI System	5.14.0	📐	Sistema de diseño y grid
 
+```bash
 TALLER4/
 ├── backend/
 │   ├── node_modules/
@@ -211,7 +212,7 @@ TALLER4/
 │   ├── package.json
 │   ├── vite.config.js
 │   └── README.md
-
+```
 ![melo](image.png)
 
 ![otro](image-1.png)
