@@ -13,12 +13,13 @@ import { Visibility, VisibilityOff, Email, Lock } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API = import.meta.env.VITE_API_URL;
-
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  // ✅ URL del backend
+  const API = import.meta.env.VITE_API_URL;
 
   const handleLogin = async () => {
     // 🔥 Validación
@@ -29,7 +30,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/login",
+        `${API}/api/auth/login`, // ✅ CORREGIDO
         form,
         {
           headers: {
@@ -38,21 +39,21 @@ const Login = () => {
         }
       );
 
-      console.log(res.data); // 🔍 ver respuesta
+      console.log(res.data);
 
       // ✅ Guardar usuario
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      alert("Login exitoso");
+      alert("Login exitoso ✅");
 
       // 🔁 Redirección
-      navigate("/Dashboard");
+      navigate("/dashboard");
 
     } catch (error) {
-      console.log(error.response?.data); // 🔥 ver error real
+      console.log(error.response?.data);
 
       alert(
-        error.response?.data?.message || "Credenciales incorrectas"
+        error.response?.data?.message || "Credenciales incorrectas ❌"
       );
     }
   };
@@ -67,7 +68,7 @@ const Login = () => {
         justifyContent: "center"
       }}
     >
-      <Container maxWidth="size">
+      <Container maxWidth="sm">
         <Paper elevation={10} sx={{ p: 4, borderRadius: 4 }}>
           <Typography variant="h4" align="center" gutterBottom>
             🔐 Iniciar Sesión

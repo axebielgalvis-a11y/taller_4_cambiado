@@ -11,6 +11,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+// ✅ URL del backend desde .env
 const API = import.meta.env.VITE_API_URL;
 
 const Register = () => {
@@ -25,7 +26,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleRegister = async () => {
-    // 🔥 VALIDACIÓN COMPLETA
+    // 🔥 VALIDACIÓN
     if (
       !form.name ||
       !form.lastName ||
@@ -39,7 +40,7 @@ const Register = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        `${API}/api/auth/register`, // ✅ CORREGIDO
         form,
         {
           headers: {
@@ -50,14 +51,14 @@ const Register = () => {
 
       console.log(res.data);
 
-      alert("Usuario registrado");
+      alert("Usuario registrado correctamente ✅");
       navigate("/login");
 
     } catch (error) {
-      console.log(error.response?.data); // 🔥 VER ERROR REAL
+      console.log(error.response?.data);
 
       alert(
-        error.response?.data?.message || "Error al registrar"
+        error.response?.data?.message || "Error al registrar ❌"
       );
     }
   };
