@@ -11,6 +11,8 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API = import.meta.env.VITE_API_URL;
+
 const Register = () => {
   const [form, setForm] = useState({
     name: "",

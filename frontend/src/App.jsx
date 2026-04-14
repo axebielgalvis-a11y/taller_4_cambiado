@@ -7,7 +7,12 @@ import RickAndMorty from "./features/api/rickandmorty";
 import Dashboard from "./features/dashboard/Dashboard";
 import { HashRouter, Route, Routes } from "react-router-dom";
 
+// ✅ URL del backend (desde .env)
+const API = import.meta.env.VITE_API_URL;
+
 function App() {
+  console.log("API URL:", API); // 👈 para verificar que está funcionando
+
   return (
     <HashRouter>
       <Header />
