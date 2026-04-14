@@ -5,6 +5,7 @@ Gestor de Gastos Diarios es una aplicación web moderna y sofisticada diseñada 
 
 <h1>🌟 Características Principales - Gestor de Gastos Diarios</h1>
 
+```bash
 📊 Dashboard - Panel de Control (Integrado)
 Funcionalidad	Estado
 ➕ Agregar gastos	✅ Completado
@@ -14,6 +15,7 @@ Funcionalidad	Estado
 🏷️ Filtro por categoría	✅ Completado
 📱 Modal de edición	✅ Completado
 🔔 Notificaciones visuales	✅ Completado
+```
 
 <h1>🌟 🚀 Instalación y Configuración - Gestor de Gastos Diarios</h1>
 
