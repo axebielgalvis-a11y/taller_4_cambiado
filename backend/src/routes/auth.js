@@ -1,5 +1,5 @@
 import express from "express";
-import User from "../models/User.js"; // ajusta la ruta si es necesario
+import User from "../models/user.js"; // ajusta la ruta si es necesario
 
 const router = express.Router();
 
